@@ -1,4 +1,4 @@
-
+currentPage
 <h1>Distric Operation</h1>   
 <div class= "row">
 <div ng-app="myApp" ng-controller="districCtrl" ng-model="districs" class="col-sm-6">
@@ -12,7 +12,7 @@
                                 <th scope="col">created</th>
                                 </tr>
                         </thead>
-                                <tr ng-repeat="x in districs | startFrom:4 | limitTo: pageSize">
+                                <tr ng-repeat="x in districs | startFrom:(currentPage-1)*pageSize| limitTo: pageSize">
                                         <td><input type="checkbox" ng-model="x.done"></td>
                                         <td>{{ x.id }}</td>
                                         <td>{{ x.name }}</td>
